@@ -1,0 +1,59 @@
+.shadow {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-control {
+    margin: 10px;
+    width: 95%;
+}
+
+.form-group label {
+    padding-top: 6px;
+    margin-left: 10px;
+}
+
+#lName {
+    margin-left: 0;
+}
+
+label[for="fName"] {
+    margin-left: 10px;
+}
+
+select {
+    background-color: transparent;
+}
+
+.form-control:hover, .form-control:focus {
+    border-color: #F44336;
+}
+
+.col-md-4 {
+    padding: 0;
+}
+
+.modal-header, .btn-success, nav, a, .dropdown-menu > li > a {
+    background-color: #F44336;
+    color: #ffffff;
+}
+
+.dropdown-menu {
+    padding: 0;
+    border: 1px;
+    border-radius: 10px;
+}
+
+.btn-success:hover {
+    background-color: #B71C1C;
+}
+
+.dropdown-menu > li > a{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.container-fluid{
+    border-bottom: 1px solid black;
+}
+
+

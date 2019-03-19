@@ -7,6 +7,7 @@
     width: 95%;
 }
 
+
 .form-group label {
     padding-top: 6px;
     margin-left: 10px;
@@ -32,7 +33,7 @@ select {
     padding: 0;
 }
 
-.modal-header, .btn-success, nav, a, .dropdown-menu > li > a {
+.modal-header, .btn-success,.btn-success:active:hover, nav, a, .dropdown-menu > li > a {
     background-color: #F44336;
     color: #ffffff;
 }
@@ -43,17 +44,28 @@ select {
     border-radius: 10px;
 }
 
-.btn-success:hover {
+.btn-success:hover, .btn-success:focus {
     background-color: #B71C1C;
 }
 
-.dropdown-menu > li > a{
+
+.dropdown-menu > li > a {
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
 }
-.container-fluid{
+
+.dropdown-menu > li:first-child {
+    border-top: 1px solid black;
+}
+
+.container-fluid {
     border-bottom: 1px solid black;
+}
+input[type="color"]{
+    border: 1px solid black;
+    border-radius: 90%;
+    box-shadow: 1px 1px black;
 }
 
 

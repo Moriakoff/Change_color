@@ -1,71 +1,104 @@
 function changeColor(color) {
-    const mainSelectors = document.querySelectorAll('.modal-header, .btn-success, nav, a, .dropdown-menu > li >a ');
+
+    const blackFont = "#000000";
+    const whiteFont = "#ffffff";
+
+    let primaryColor = "#F44336";
+    let secondaryColor = "#B71C1C";
+
+    switch (color) {
+
+        case 1:
+            primaryColor = "#2196f3";
+            secondaryColor = "#0d47a1";
+
+            changeElementsByEvent(secondaryColor, primaryColor);
+            changeColorScheme(primaryColor, whiteFont);
+            break;
+
+        case 2:
+            primaryColor = "#80deea";
+            secondaryColor = "#00acc1";
+
+            changeElementsByEvent(secondaryColor, primaryColor);
+            changeColorScheme(primaryColor, blackFont);
+            break;
+
+        case 3:
+            primaryColor = "#ffeb3b";
+            secondaryColor = "#f9a825";
+
+            changeElementsByEvent(secondaryColor, primaryColor);
+            changeColorScheme(primaryColor, blackFont);
+            break;
+
+        case 4:
+            changeElementsByEvent(secondaryColor, primaryColor);
+            changeColorScheme(primaryColor, whiteFont);
+            break;
+
+        case 5:
+            primaryColor = $("#colorPicker").val();
+            secondaryColor = '#128' + primaryColor.substring(1);
+            changeElementsByEvent(secondaryColor, primaryColor);
+            changeColorScheme(primaryColor, whiteFont);
+            break;
+    }
+}
+
+function changeElementsByEvent(color, colorDefault) {
+
+    $(".form-control").focusin(function () {
+        $(this).css("border-color", color);
+    });
+
+    $("input").focusout(function () {
+        $(this).css("border-color", colorDefault);
+    });
+
+    $(".btn-success").hover(function () {
+        $(this).css("background-color", color);
+    }, function () {
+        $(this).css("background-color", colorDefault);
+    });
+
+}
+
+function changeColorScheme(primaryColor, primaryFontColor) {
+    const mainSelectors = document.querySelectorAll('.modal-header, .btn-success, nav, a,' +
+        ' .dropdown-menu > li >a ');
     const inputs = document.getElementsByTagName("input");
     const selects = document.getElementsByTagName("select");
 
-    if (color === 1) {
+    [].forEach.call(inputs, value => {
+        value.style.borderColor = primaryColor;
+    });
 
-        [].forEach.call(inputs, value => {
-            value.style.borderColor = "#42a5f5"
-        });
+    [].forEach.call(selects, value => {
+        value.style.borderColor = primaryColor;
+    });
 
-        [].forEach.call(selects, value => {
-            value.style.borderColor = "#42a5f5"
-        });
-
-        mainSelectors.forEach(value => {
-            value.style.backgroundColor = "#2196f3";
-            value.style.color = "#ffffff";
-        });
-    }
-
-    if (color === 2) {
-
-        [].forEach.call(inputs, value => {
-            value.style.borderColor = "#00bcd4"
-        });
-
-        [].forEach.call(selects, value => {
-            value.style.borderColor = "#00bcd4"
-        });
-
-        mainSelectors.forEach(value => {
-            value.style.backgroundColor = "#00bcd4";
-            value.style.color = "black";
-        });
-    }
-
-
-    if (color === 3) {
-
-        [].forEach.call(inputs, value => {
-            value.style.borderColor = "#d4e157"
-        });
-
-        [].forEach.call(selects, value => {
-            value.style.borderColor = "#d4e157"
-        });
-
-        mainSelectors.forEach(value => {
-            value.style.backgroundColor = "#cddc39";
-            value.style.color = "black";
-        });
-    }
-    if (color === 4) {
-
-        [].forEach.call(inputs, value => {
-            value.style.borderColor = "#F44336"
-        });
-
-        [].forEach.call(selects, value => {
-            value.style.borderColor = "#F44336"
-        });
-
-        mainSelectors.forEach(value => {
-            value.style.backgroundColor = "#F44336";
-            value.style.color = "#ffffff";
-        });
-    }
-
-
+    mainSelectors.forEach(value => {
+        value.style.backgroundColor = primaryColor;
+        value.style.color = primaryFontColor;
+    });
+    document.getElementById("colorPicker").defaultValue = primaryColor;
+    $("#white-font").css("color", "white");
+    $("#black-font").css("color", "black");
 }
+
+function changeFont(value) {
+    let fontColor = "black";
+    if (value===1) {
+        fontColor = "white";
+    }
+    const mainSelectors = document.querySelectorAll('.modal-header, .btn-success, nav, a,' +
+        ' .dropdown-menu > li >a ');
+    mainSelectors.forEach(value => {
+        value.style.color = fontColor;
+    });
+
+    $("#white-font").css("color", "white");
+    $("#black-font").css("color", "black");
+}
+

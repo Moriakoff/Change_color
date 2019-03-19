@@ -44,12 +44,26 @@
                     <li><a href="#" onclick="changeColor(2)">Cyan</a></li>
                     <li><a href="#" onclick="changeColor(3)">Yellow</a></li>
                     <li><a href="#" onclick="changeColor(4)">Default</a></li>
+                    <li><a href="#">
+                        <label for="colorPicker">Custom color
+                        <input onchange="changeColor(5)" id="colorPicker" type="color" value="#F44336">
+                        </label>
+                    </a></li>
                 </ul>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Font <span
+                    class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" onclick="changeFont(1)" id="white-font">White</a></li>
+                    <li><a href="#" onclick="changeFont(2)" id="black-font">Black</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
 </nav>
